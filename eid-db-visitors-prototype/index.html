@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>eID database - visits</title>
+        <title>eID database - visits - prototpe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -37,190 +37,184 @@
 		
 		<div id="loading">
 		
-        <div class="navbar navbar-fixed-top">
-   <div class="navbar-inner">
-     <div class="container">
-       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </a>
-					<a class="brand" href="">eID database - visits</a>
+			<div class="navbar navbar-fixed-top">
+			   <div class="navbar-inner">
+				 <div class="container">
+				   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+				   </a>
+				   
+					<a class="brand" href="">eID database - visits <span class="label label-important">prototype</span></a>
 					
 					<ul class="nav nav-tabs" id="myTabNav">
-						<!--<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Visits<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-							  <li><a href="#new-visit" data-toggle="tab">New</a></li>
-							  <li><a href="#history-visits" data-toggle="tab">History</a></li>
-							</ul>
-						</li>-->
 						<li><a href="#new-visit" data-toggle="tab">New</a></li>
 						<li><a href="#history-visits" data-toggle="tab">History</a></li>
 						<li><a href="#admin" data-toggle="tab">Admin</a></li>
 						<li><a href="#logout" data-toggle="tab">Logout</a></li>
 					</ul>
-					
-					
                 </div>
-            </div>
-        </div>
-
-        <div class="container">
-		<h1 class="pull-right span4 alert alert-error">prototype</h1>
-			<div id="home">
-				<h1>eID database - visits</h1>
-				<a href="#" class="btn btn-link" >Sign in using you electronic ID card</a>
+				</div>
 			</div>
-			
-			<div class="tab-content">
-				<div class="tab-pane" id="new-visit">
-					<h2>New Visit</h2>
+		
+		
+			<div class="container">
+		
+				<div id="home">
+					<h1>eID database - visits</h1>
+					<a href="#" class="btn btn-link" >Sign in using you electronic ID card</a>
+				</div>
+				
+				
+				<div class="tab-content">
+					<div class="tab-pane" id="new-visit">
+						<h2>New Visit</h2>
+						
+						<p><button class="btn" id="btn-read-eid">Read eID</button></p>
 					
-					<p><button class="btn" id="btn-read-eid">Read eID</button></p>
-				
-					<div id="myDivReadEid" class="well hide">
-						<ul class="nav nav-tabs" id="myTabReadEid">
-							<li><a href="#identity" data-toggle="tab">Identity</a></li>
-							<li><a href="#address" data-toggle="tab">Address</a></li>
-							<li><a href="#card" data-toggle="tab">Card</a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane" id="identity">
-								<p>Identity</p>
+						<div id="myDivReadEid" class="well hide">
+							<ul class="nav nav-tabs" id="myTabReadEid">
+								<li><a href="#identity" data-toggle="tab">Identity</a></li>
+								<li><a href="#address" data-toggle="tab">Address</a></li>
+								<li><a href="#card" data-toggle="tab">Card</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane" id="identity">
+									<p>Identity</p>
+								</div>
+								
+								<div class="tab-pane" id="address">
+								  <p>address</p>
+								</div>
+								
+								<div class="tab-pane" id="card">
+									<p>card</p>
+								</div>
 							</div>
 							
-							<div class="tab-pane" id="address">
-							  <p>address</p>
-							</div>
-							
-							<div class="tab-pane" id="card">
-								<p>card</p>
-							</div>
+							<p class="text-info">Number of visits till today: x</p>
 						</div>
-						
-						<p class="text-info">Number of visits till today: x</p>
-					</div>
 
-					<form class="form-inline hide" id="frm-saveid">
-					  <input type="text" placeholder="Purpose of visit" id="txt-purpose" required>
-					  <button type="submit" class="btn" id="btn-save-eid">Save visit</button>
-					</form>
-				</div> 
-				
-				<div class="tab-pane" id="history-visits">
-					<h2>History Visits</h2>
-					<div >
-						<div>
-							Filter by name: 
-							<input type="text"   data-provide="typeahead" data-items="4" 
-							data-source='["Person1", "Person2", "Person3"]'
-							id="inputName" onclick="inputDate.value=''">
-						</div>
-						
+						<form class="form-inline hide" id="frm-saveid">
+						  <input type="text" placeholder="Purpose of visit" id="txt-purpose" required>
+						  <button type="submit" class="btn" id="btn-save-eid">Save visit</button>
+						</form>
+					</div> 
+					
+					<div class="tab-pane" id="history-visits">
+						<h2>History Visits</h2>
 						<div >
-							Filter by visited:
-							<input type="date" id="inputDate"
-							onclick="inputName.value=''">
+							<div>
+								Filter by name: 
+								<input type="text"   data-provide="typeahead" data-items="4" 
+								data-source='["Person1", "Person2", "Person3"]'
+								id="inputName" onclick="inputDate.value=''">
+							</div>
+							
+							<div >
+								Filter by visited:
+								<input type="date" id="inputDate"
+								onclick="inputName.value=''">
+							</div>
 						</div>
+						
+							<span class="alert alert-error">Fields to display? Order by?</span>
+							<table class="table table-bordered table-striped table-hover tablesorter">
+							<thead>
+							  <tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Date of visit</th>
+								<th>Purpose</th>
+								<th>Nationality</th>
+								<th>Date Of Birth</th>
+								<th>Gender</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>Essie</td>
+								<td>Vaill</td>
+								<td>Sun 18/11/2012, 1:48:28 AM</td>
+								<td>Sollicitation</td>
+								<td>Belg</td>
+								<td>Date Of Birth</td>
+								<td>MALE</td>
+							  </tr>
+							  <tr>
+								<td>Billie</td>
+								<td>Tinnes</td>
+								<td>Tue 20/11/2012, 1:28:28 AM</td>
+								<td>Delivery</td>
+								<td>Belg</td>
+								<td>Date Of Birth</td>
+								<td>FEMALE</td>
+							  </tr>
+							  <tr>
+								<td>Cruz</td>
+								<td>Roudabush</td>
+								<td>Thu 21/11/2012, 11:12:51 AM</td>
+								<td>Repair</td>
+								<td>Belg</td>
+								<td>Date Of Birth</td>
+								<td>FEMALE</td>
+							  </tr>
+							</tbody>
+						  </table>
 					</div>
 					
-						<span class="alert alert-error">Fields to display? Order by?</span>
-						<table class="table table-bordered table-striped table-hover tablesorter">
+					<div class="tab-pane" id="admin">
+					<h2>Admin</h2>
+					<h3>Administrators</h3>
+					<table class="table table-bordered table-striped ">
 						<thead>
-						  <tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Date of visit</th>
-							<th>Purpose</th>
-							<th>Nationality</th>
-							<th>Date Of Birth</th>
-							<th>Gender</th>
-						  </tr>
-						</thead>
-						<tbody>
-						  <tr>
-							<td>Essie</td>
-							<td>Vaill</td>
-							<td>Sun 18/11/2012, 1:48:28 AM</td>
-							<td>Sollicitation</td>
-							<td>Belg</td>
-							<td>Date Of Birth</td>
-							<td>MALE</td>
-						  </tr>
-						  <tr>
-							<td>Billie</td>
-							<td>Tinnes</td>
-							<td>Tue 20/11/2012, 1:28:28 AM</td>
-							<td>Delivery</td>
-							<td>Belg</td>
-							<td>Date Of Birth</td>
-							<td>FEMALE</td>
-						  </tr>
-						  <tr>
-							<td>Cruz</td>
-							<td>Roudabush</td>
-							<td>Thu 21/11/2012, 11:12:51 AM</td>
-							<td>Repair</td>
-							<td>Belg</td>
-							<td>Date Of Birth</td>
-							<td>FEMALE</td>
-						  </tr>
+							<tr>
+							  <th>First Name</th>
+							  <th>Last Name</th>
+							  <th>Username</th>
+							  <th>Actions</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr>
+							  <td>Mark</td>
+							  <td>Otto</td>
+							  <td>@mdo</td>
+							  <td><button class="btn btn-link btn-small" disabled>Delete</button></td>
+							</tr>
+							<tr>
+							  <td>Jacob</td>
+							  <td>Thornton</td>
+							  <td>@fat</td>
+							  <td><button class="btn btn-link btn-small">Delete</button></td>
+							</tr>
+							<tr>
+							  <td>Larry</td>
+							  <td>the Bird</td>
+							  <td>@twitter</td>
+							  <td><button class="btn btn-link btn-small">Delete</button></td>
+							</tr>
 						</tbody>
-					  </table>
-				</div>
-				
-				<div class="tab-pane" id="admin">
-				<h2>Admin</h2>
-				<h3>Administrators</h3>
-				<table class="table table-bordered table-striped ">
-					<thead>
-						<tr>
-						  <th>First Name</th>
-						  <th>Last Name</th>
-						  <th>Username</th>
-						  <th>Actions</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  <td>Mark</td>
-						  <td>Otto</td>
-						  <td>@mdo</td>
-						  <td><button class="btn btn-link btn-small" disabled>Delete</button></td>
-						</tr>
-						<tr>
-						  <td>Jacob</td>
-						  <td>Thornton</td>
-						  <td>@fat</td>
-						  <td><button class="btn btn-link btn-small">Delete</button></td>
-						</tr>
-						<tr>
-						  <td>Larry</td>
-						  <td>the Bird</td>
-						  <td>@twitter</td>
-						  <td><button class="btn btn-link btn-small">Delete</button></td>
-						</tr>
-					</tbody>
-				</table>
+					</table>
 
-				<button class="btn">Add</button>
+					<button class="btn">Add</button>
+					</div>
+					
+					
+					<div class="tab-pane" id="logout">
+					  <p>logout</p>
+					</div>
 				</div>
-				
-				
-				<div class="tab-pane" id="logout">
-				  <p>logout</p>
-				</div>
-			</div>
 
-			<hr>
+				<hr>
 
-			<footer class="navbar navbar-fixed-bottom">
-				<small class="muted">&copy; sl 2012</small>
-			</footer>
+				<footer class="navbar navbar-fixed-bottom">
+					<small class="muted">&copy; sl 2012</small>
+				</footer>
 
 		
-        </div> <!-- /container -->
+			</div> <!-- /container -->
 		</div> <!-- /loading -->
 		
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
